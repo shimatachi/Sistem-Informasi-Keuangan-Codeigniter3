@@ -14,7 +14,7 @@
 <link rel="icon" href="images/favicon.html" type="image/x-icon" />
 <link rel="shortcut icon" type="image/x-icon" href="img/bankbtnbaru.ico" />
 <!-- Page Title Here -->
-<title><?= $title ;?></title>
+<title>Create User</title>
 <!-- Mobile Specific -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="<?=site_url('assets/') ;?>css/bootstrap.min.css">
@@ -39,41 +39,43 @@
                     
                     </div>
                     <div class="login-form style-2">
-                    <!-- <script>
-                    setTimeout(function() {
-                        $('#fs-ilang').fadeOut('fast');
-                    }, 2000); // <-- time in milliseconds
-                    </script> -->
-                    <?php
-                    $message = $this->session->flashdata('pesan',);
-                    if (isset($message)) {
-                        echo '<div id="fs-ilang">' . $message . '</div>';
-                        $this->session->unset_userdata('pesan');
-                    }
-                    ?>
             <div class="tab-content">
                 <div id="login" class="tab-pane active text-center">
                     <br>
-                    <center> <a><h3>Login User</h3></a></center><br>
-                    <div class="dez-separator-outer m-b5">
-                        <div class="dez-separator bg-primary style-liner"></div>
-                    </div>
-                    <form class="p-a30 dez-form" method="post" action="<?= site_url('kas_user/home/index') ;?>">
+                    <center> <a><h3>Create User</h3></a></center><br>
+                    <form class="p-a30 dez-form" method="post" action="<?= site_url('kas_user/home/add_user') ;?>">
+
                         <div class="form-group">
-                            <input name="username" required="" class="form-control form-control-user" placeholder="Username" type="text"/>
+                            <input name="nama_lengkap" id="nama_lengkap" required="" class="form-control " placeholder="Nama Lengkap" type="text"/>
                         </div>
+                        <?= form_error('nama_lengkap','<small class="text-danger pl-3">','</small>');?>
                         <div class="form-group">
-                            <input name="password" required="" class="form-control " placeholder="Password" type="password"/>
+                            <input name="username" id="username" required="" class="form-control form-control-user" placeholder="Username" type="text"/>
                         </div>
+                        <?= form_error('username','<small class="text-danger pl-3">','</small>');?>
+                        <div class="form-group">
+                            <input name="password" id="password" required="" class="form-control " placeholder="Password" type="password"/>
+                        </div>
+                        <?= form_error('password','<small class="text-danger pl-3">','</small>');?>
+                        <div class="form-group">
+                            <input name="hint" id="hint" required="" class="form-control " placeholder="Hint" type="text"/>
+                        </div>
+                        <?= form_error('hint','<small class="text-danger pl-3">','</small>');?>
+                        <div class="form-group">
+                            <input name="no_telepon" id="no_telepon" required="" class="form-control " placeholder="No Telepon" type="text"/>
+                        </div>
+                        <?= form_error('no_telepon','<small class="text-danger pl-3">','</small>');?>
+                        <div class="form-group">
+                            <input name="level" id="level" required="" class="form-control " value="User" type="hidden" readonly/>
+                        </div>
+                        <?= form_error('level','<small class="text-danger pl-3">','</small>');?>
 
                         <div class="">
-                            <center><input name="login" type="submit" value="Login" class="site-button"></center>
+                            <center><input name="login" type="submit" value="Create" class="site-button"></center>
                         </div>
                         </br>
                         <div class="form-group text-left">
-                            <center><a href="<?= site_url('kas_user/home/create_account');?>">Create User</a></center>
-                </br>
-                            <center><a href=..>Login Admin</a></center>
+                            <center><a href=..>Login</a></center>
                         </div>
                     </form>
                 </div>

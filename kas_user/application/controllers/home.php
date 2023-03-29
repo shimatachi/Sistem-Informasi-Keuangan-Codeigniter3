@@ -34,7 +34,11 @@ Class Home extends CI_Controller{
                 }
             }
     }
-
+    
+    public function create_account()
+        {
+                $this->load->view('create_user');
+        }
     
     public function settings(){
         $data['user'] =$this->db->GET_WHERE('tb_pengguna',['username' => $this->session->userdata('username')])->row_array();
@@ -281,28 +285,28 @@ Class Home extends CI_Controller{
     }
 
     public function add_user(){
+        $nama_lengkap = $this->input->post('nama_lengkap');
         $username = $this->input->post('username');
         $password = md5($this->input->post('password'));
         $hint = $this->input->post('hint');
-        $nama_lengkap = $this->input->post('nama_lengkap');
         $no_telepon = $this->input->post('no_telepon');
         $level = $this->input->post('level');
 
 
         $data = array(
+            'nama_lengkap' => $nama_lengkap,
             'username' => $username,
             'password'   => $password,
             'hint'   => $hint,
-            'nama_lengkap' => $nama_lengkap,
             'no_telepon' => $no_telepon,
             'level' => $level,
 
         );
         $this->m_data->save2($data,'tb_pengguna');
-        // $this->session->set_flashdata('success', 'Berhasil disimpan');
+        $this->session->set_flashdata('success', 'Akun Berhasil Dibuat');
         $data['message'] = 'Insert success';
 
-		redirect('kas_user/home/data1', $data);
+		redirect('kas_user/home', $data);
     }
 
     public function edit1($id = NULL){
