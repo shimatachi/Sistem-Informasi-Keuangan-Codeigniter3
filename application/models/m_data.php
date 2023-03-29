@@ -10,7 +10,7 @@ Class M_data extends CI_Model{
 
     public function tampil1(){
         $this->db->select('*');
-        $this->db->from('tb_user');
+        $this->db->from('tb_pengguna');
         $query = $this->db->get();
         return $query->result();
     }

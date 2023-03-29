@@ -40,7 +40,18 @@
                     
                     </div>
                     <div class="login-form style-2">
-                            <?= $this->session->flashdata('pesan');?>
+                    <!-- <script>
+                    setTimeout(function() {
+                        $('#fs-ilang').fadeOut('fast');
+                    }, 2000); // <-- time in milliseconds -->
+                    </script>
+                    <?php
+                    $message = $this->session->flashdata('pesan');
+                    if (isset($message)) {
+                        echo '<div id="fs-ilang">' . $message . '</div>';
+                        $this->session->unset_userdata('pesan');
+                    }
+                    ?>
             <div class="tab-content">
                 <div id="login" class="tab-pane active text-center">
                     <br>
@@ -61,14 +72,14 @@
                         </div>
                         </br>
                         <div class="form-group text-left">
-                            <center><a>Login User</a></center>
+                            <center><a href=kas_user>Login User</a></center>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
         <div class="bottom-footer text-center text-white">
-            <p> &copy; Copyright <?php echo date('Y');  ?> | ini footer</p>
+            <p> &copy; Copyright <?php echo date('Y');  ?> | Invictus Community</p>
         </div>
         </div>
     </div>

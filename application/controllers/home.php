@@ -185,7 +185,7 @@ Class Home extends CI_Controller{
             'debit' => $penerimaan
         );
         $this->m_data->save3($data,'tb_paypal');
-        // $this->session->set_flashdata('success', 'Berhasil disimpan');
+        $this->session->set_flashdata('success', 'Data Pemasukan Paypal Berhasil disimpan');
 
 		redirect('home/data3');
     }
@@ -207,7 +207,7 @@ Class Home extends CI_Controller{
 
         );
         $this->m_data->save_rekening($data,'tb_rekening');
-        // $this->session->set_flashdata('success', 'Berhasil disimpan');
+        $this->session->set_flashdata('success', 'Data Rekening Berhasil disimpan');
 
 		redirect('home/data_rekening');
     }
@@ -228,7 +228,7 @@ Class Home extends CI_Controller{
             'debit' => $penerimaan
         );
         $this->m_data->save($data,'tb_kas');
-        // $this->session->set_flashdata('success', 'Berhasil disimpan');
+        $this->session->set_flashdata('success', 'Data Pemasukan Kas Berhasil disimpan');
 
 		redirect('home/data2');
     }
@@ -249,7 +249,7 @@ Class Home extends CI_Controller{
             'kredit' => $penerimaan
         );
         $this->m_data->save($data,'tb_kas');
-        // $this->session->set_flashdata('success', 'Berhasil disimpan');
+        $this->session->set_flashdata('success', 'Data Pengeluaran Kas Berhasil disimpan');
 
 		redirect('home/data2');
     }
@@ -270,7 +270,7 @@ Class Home extends CI_Controller{
             'kredit' => $penerimaan
         );
         $this->m_data->save3($data,'tb_paypal');
-        // $this->session->set_flashdata('success', 'Berhasil disimpan');
+        $this->session->set_flashdata('success', 'Data Pengeluaran Paypal Berhasil disimpan');
 
 		redirect('home/data3');
     }
@@ -294,7 +294,7 @@ Class Home extends CI_Controller{
 
         );
         $this->m_data->save2($data,'tb_user');
-        // $this->session->set_flashdata('success', 'Berhasil disimpan');
+        $this->session->set_flashdata('success', 'Berhasil disimpan');
         $data['message'] = 'Insert success';
 
 		redirect('home/data1', $data);
@@ -306,6 +306,7 @@ Class Home extends CI_Controller{
 
         $data['user'] = $this->db->GET_WHERE('tb_user',['username' => $this->session->userdata('username')])->row_array();
         $data['title'] = 'Edit Data';
+        $this->session->set_flashdata('success', 'Data User Berhasil Diedit');
         $this->template->utama('input/edit_masuk',$data);
     }
 
@@ -315,6 +316,7 @@ Class Home extends CI_Controller{
 
         $data['user'] = $this->db->GET_WHERE('tb_user',['username' => $this->session->userdata('username')])->row_array();
         $data['title'] = 'Edit Data Paypal';
+        $this->session->set_flashdata('success', 'Data paypal Berhasil Diedit');
         $this->template->utama('input/edit_paypal',$data);
     }
     

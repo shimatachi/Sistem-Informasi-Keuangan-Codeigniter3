@@ -1,8 +1,15 @@
-<!-- <?php if ($this->session->flashdata('success')): ?>
-	<div class="alert alert-success" role="alert">
-		<?php echo $this->session->flashdata('success'); ?>
-	</div>
-<?php endif; ?> -->
+<script>
+	setTimeout(function() {
+	$('#fs-ilang').fadeOut('fast');
+	}, 2000); // <-- time in milliseconds
+</script>
+<?php
+	$message = $this->session->flashdata('success');
+	if (isset($message)) {
+	echo '<div id="fs-ilang" class="alert alert-success" role="alert">' . $message . '</div>';
+	$this->session->unset_userdata('success');
+	}
+?>
 				<div class="page-header">
 						<h4 class="page-title">Data Kas	</h4>
 						<ul class="breadcrumbs">
