@@ -1,6 +1,6 @@
 <!-- <?php if ($this->session->flashdata('success')): ?>
 	<div class="alert alert-success" role="alert">
-		<?php echo $this->session->flashdata('success'); ?>
+	<?php echo $this->session->flashdata('success'); ?>
 	</div>
 <?php endif; ?> -->
 				<div class="page-header">
@@ -32,7 +32,6 @@
 													<th>Penerimaan</th>
 													<th>Pengeluaran</th>
 													<th>Saldo</th>
-													<th>Aksi</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -53,10 +52,6 @@
 													<td>Rp. <?= number_format($a->debit,2,",",".") ;?></td>
 													<td>Rp. <?= number_format($a->kredit,2,",",".") ;?></td>
 													<td>Rp.<?= number_format($saldo,2,",",".") ;?></td>
-													<td>
-													<!-- <a href="<?= site_url('kas_user/home/edit1/').$a->idkas ;?>" class="btn btn-small text-primary" width="300px" height="400px"><i class="fas fa-edit"></i></a>
-													<a onclick="deleteConfirm('<?php echo site_url('kas_user/home/hapus2/'.$a->idkas) ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i></a> -->
-													</td>
 													<?php endforeach ;?>
 													<?php $total += $saldo+0 ;?>
 													<?php $total1 += $saldo1+0 ;?>

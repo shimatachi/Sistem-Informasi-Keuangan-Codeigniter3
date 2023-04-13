@@ -34,7 +34,6 @@
 													<th>Penerimaan Setelah Pajak</th>
 													<th>Pengeluaran</th>
 													<th>Saldo</th>
-													<th>Aksi</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -59,10 +58,6 @@
 														<td>$ <?= number_format($a->debit - $a->debit * 5 / 100	,2,",",".") ;?></td>
 													<td>$ <?= number_format($a->kredit,2,",",".") ;?></td>
 													<td>$<?= number_format($saldo,2,",","."	) ;?></td>
-													<td>
-													<!-- <a href="<?= site_url('kas_user/home/edit2/').$a->id_paypal ;?>" class="btn btn-small text-primary" width="300px" height="400px"><i class="fas fa-edit"></i></a>
-													<a onclick="deleteConfirm('<?php echo site_url('kas_user/home/hapus3/'.$a->id_paypal) ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i></a> -->
-													</td>
 													<?php endforeach ;?>
 													<?php $total += $saldo+0 ;?>
 													<?php $total1 += $saldo1+0 ;?>

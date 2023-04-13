@@ -35,6 +35,7 @@
 													<th>Nama Rekening</th>
 													<th>Bank</th>
 													<th>No Rekening</th>
+													<th>Aksi</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -48,7 +49,7 @@
 													<td><?= $a->nama_bank ;?></td>
 													<td><?= $a->no_rekening ;?></td>
 													<td>
-														<a onclick="deleteConfirm('<?= site_url('home/hapus4/'.$a->kode_user) ;?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i></a>
+														<a onclick="deleteConfirm('<?= site_url('home/hapus_rekening/'.$a->id_rekening) ;?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i></a>
 													</td>
 												</tr>
 												<?php endforeach ;?>

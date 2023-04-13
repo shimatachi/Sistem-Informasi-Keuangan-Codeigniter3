@@ -303,7 +303,7 @@ Class Home extends CI_Controller{
 
         );
         $this->m_data->save2($data,'tb_pengguna');
-        $this->session->set_flashdata('success', 'Akun Berhasil Dibuat');
+        $this->session->set_flashdata('pesan','<div align="center" class="alert alert-success" role="alert"><b>Akun berhasil dibuat</b></div>');
         $data['message'] = 'Insert success';
 
 		redirect('kas_user/home', $data);

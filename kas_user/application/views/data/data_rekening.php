@@ -35,6 +35,7 @@
 													<th>Nama Rekening</th>
 													<th>Bank</th>
 													<th>No Rekening</th>
+													<th>Aksi</th>
 												</tr>
 											</thead>
 											<tbody>
