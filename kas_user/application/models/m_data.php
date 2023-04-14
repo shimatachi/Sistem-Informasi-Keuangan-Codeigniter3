@@ -1,6 +1,13 @@
 <?php
 Class M_data extends CI_Model{
 
+    public function tampil_kas(){
+        $this->db->select('SUM(debit - kredit) AS saldo');
+        $this->db->from('tb_kas');
+        $query = $this->db->get();
+        return $query->result(); 
+    }
+
     public function tampil(){
         $this->db->select('*');
         $this->db->from('tb_kas');

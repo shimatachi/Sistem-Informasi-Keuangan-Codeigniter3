@@ -60,6 +60,9 @@
 	<!-- Atlantis JS -->
 	<script src="<?= site_url('assets/assets/') ;?>js/atlantis.min.js"></script>
 
+	<!-- Bootstrap 5 -->
+	<script src="<?= site_url('assets/assets/') ;?>js/bootstrap.min2"></script>
+
 	
 	<script>
 		Circles.create({

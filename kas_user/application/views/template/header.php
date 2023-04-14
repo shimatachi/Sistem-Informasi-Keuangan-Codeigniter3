@@ -23,6 +23,7 @@
 	<link rel="stylesheet" href="<?= site_url('assets/assets/') ;?>css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?= site_url('assets/assets/') ;?>css/atlantis.min.css">
 	<link rel="stylesheet" href="<?= site_url('assets/assets/') ;?>css/font-awesome.css">
+	<link rel="stylesheet" href="<?= site_url('assets/assets/') ;?>css/bootstrap5.css">
 
 	<script src="<?= site_url('assets/assets/ckeditor/') ;?>ckeditor.js"></script>
 

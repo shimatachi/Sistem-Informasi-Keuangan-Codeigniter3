@@ -48,6 +48,7 @@ Class Home extends CI_Controller{
 
     public function halaman(){
         $data['user'] =$this->db->GET_WHERE('tb_pengguna',['username' => $this->session->userdata('username')])->row_array();
+        $data['kas'] = $this->m_data->tampil_kas();
         $data['title'] = 'Halaman Awal';
         $this->template->utama('template/homee',$data);
     }
